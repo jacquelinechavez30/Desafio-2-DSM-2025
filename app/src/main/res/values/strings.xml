@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Registro escolar</string>
+    <string name="cerrarsesion">Cerrar Sesion</string>
+    <string name="Iniciar_sesión">Iniciar Sesion</string>
+    <string name="Registrase">Registrar Cuenta</string>
+    <string name="Guardar">Guardar</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="correo">Correo electronico</string>
+    <string name="contraseña">Contraseña</string>
+
+</resources>

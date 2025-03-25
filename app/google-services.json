@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1088200616906",
+    "project_id": "desafio-2-registro-escolar",
+    "storage_bucket": "desafio-2-registro-escolar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088200616906:android:7f5ba9c2e8260df1b33d33",
+        "android_client_info": {
+          "package_name": "com.example.registroescolar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-s44LLLUzvyAZDuGOfqIWF7mHRhcV-ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

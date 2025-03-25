@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    //paleta
+    <color name="color_primario_oscuro">#1976D2</color>
+    <color name="color_primario_claro">#BBDEFB</color>
+    <color name="color_primario">#2196F3</color>
+    <color name="color_texto_iconos">#FFFFFF</color>
+    <color name="color_acento">#FFEB3B</color>
+    <color name="color_texto_principal">#212121</color>
+    <color name="color_texto_secundario">#757575</color>
+    <color name="color_divisor">#BDBDBD</color>
+</resources>

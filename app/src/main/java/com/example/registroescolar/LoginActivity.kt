@@ -68,16 +68,20 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    //Inicio de sesión exitoso
                     val user = auth.currentUser
                     Log.d(TAG, "signInWithEmail:success, User: $user")
-                    // Aquí puedes redirigir a la siguiente actividad o realizar otras operaciones
-                    val intent = Intent(this, Registro_de_notas_de_estudiantesActivity::class.java)
+                    //Obtengo el id usuario(Profesos)
+                    val uid = auth.currentUser?.uid
+                    // vamos a la siguiente actividad
+                    val intent = Intent(this, VerRegistrosActivity::class.java)
+                   //Le estoy enviando el id del usuario a la siguiente actividad
+                    intent.putExtra("USER_ID", uid)
                     startActivity(intent)
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // Fallo el inicio de sesion e mujuestra un mensaje
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    // Aquí puedes mostrar un mensaje de error al usuario, por ejemplo, Toast
+                    // Aquí muestra un mensaje de error al usuario
                     showAlertDialog("Error", "signInWithEmail:failure" + task.exception)
                 }
             }

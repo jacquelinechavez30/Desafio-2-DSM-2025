@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombreestudiante"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvApellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apellidoestudiante"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvGrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Grado"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvMateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Materia"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvNotaFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Nota_Final"
+        android:textSize="16sp" />
+
+
+
+</LinearLayout>

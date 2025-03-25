@@ -13,13 +13,17 @@
         android:theme="@style/Theme.RegistroEscolar"
         tools:targetApi="31">
         <activity
+            android:name=".VerRegistrosActivity"
+            android:exported="false" />
+        <activity
             android:name=".BarrasuperiorActivity"
             android:exported="true" />
         <activity
             android:name=".Registro_de_notas_de_estudiantesActivity"
             android:exported="false" />
-        <activity android:name=".RegistroActivity"
-            android:exported="false" /> />
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

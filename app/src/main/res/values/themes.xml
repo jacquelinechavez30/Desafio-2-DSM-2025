@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme (Light Mode) -->
     <style name="Base.Theme.RegistroEscolar" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/color_acento</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/color_texto_principal</item>
+        <item name="colorSecondary">@color/color_primario</item>
     </style>
 
-    <style name="Theme.RegistroEscolar" parent="Base.Theme.RegistroEscolar" />
+    <style name="Theme.RegistroEscolar" parent="Base.Theme.RegistroEscolar"/>
 </resources>

@@ -2,12 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    //paleta
-    <color name="color_primario_oscuro">#1976D2</color>
-    <color name="color_primario_claro">#BBDEFB</color>
-    <color name="color_primario">#2196F3</color>
-    <color name="color_texto_iconos">#FFFFFF</color>
-    <color name="color_acento">#FFEB3B</color>
+
+    <!-- Paleta de colores -->
+    <color name="color_primario_oscuro">#303F9F</color>
+    <color name="color_primario_claro">#C5CAE9</color>
+    <color name="color_primario">#3F51B5</color>
+    <color name="color_acento">#7C4DFF</color>
+    <color name = "color_light_purple">#7562F5</color>
+
+    <!-- Colores de texto -->
     <color name="color_texto_principal">#212121</color>
     <color name="color_texto_secundario">#757575</color>
     <color name="color_divisor">#BDBDBD</color>

@@ -85,11 +85,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
-        android:text="Ver registros"
+        android:text="@string/Iniciar_sesión_bienvenida"
         android:textSize="24sp"
-        android:textColor="@color/color_texto_iconos"
+        android:textColor="@color/color_texto_principal"
         android:backgroundTint="@color/color_acento"
-        android:contentDescription="Ver Registros"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

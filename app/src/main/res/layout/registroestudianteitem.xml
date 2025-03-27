@@ -3,43 +3,95 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/main"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="25dp"
+    android:padding="8dp"
+    android:background="?attr/colorPrimary">
+
+    <TextView
+        android:id = "@+id/codigoEstudiante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        />
 
     <TextView
         android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nombreestudiante"
-        android:textSize="16sp" />
+        android:text=""
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/tvApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/apellidoestudiante"
-        android:textSize="16sp" />
+        android:text=""
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/tvGrado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Grado"
-        android:textSize="16sp" />
+        android:text="Grado:"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/tvMateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Materia"
-        android:textSize="16sp" />
+        android:text="Materia:"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/tvNotaFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Nota_Final"
-        android:textSize="16sp" />
+        android:text="Nota Final:"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:id="@+id/layoutAddStudentItem"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="-20dp"
+        android:padding="8dp"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/right_arrow2"
+            />
+
+    </LinearLayout>
 
 
 

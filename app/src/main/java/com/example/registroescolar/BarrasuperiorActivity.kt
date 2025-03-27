@@ -30,7 +30,7 @@ class BarrasuperiorActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-            finish()
+            finish() // Tells Android that you don't want users to come back to this activity after they log out
         }
     }
 }

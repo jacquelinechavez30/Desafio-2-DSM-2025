@@ -69,7 +69,7 @@ class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
         btnVerRegistros.setOnClickListener {
             val intent = Intent(this, VerRegistrosActivity::class.java)
            //Le estoy enviando el id del usuario a la siguiente actividad
-            intent.putExtra("USER_ID", userId)
+            intent.putExtra("USER_ID", userId) // esto es como manejar sesiones entre pantallas
             startActivity(intent)
         }
         edtNombre = findViewById(R.id.edtNombre)
@@ -111,12 +111,12 @@ class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
             Toast.makeText(this, "La nota final debe estar entre 0 y 10", Toast.LENGTH_SHORT).show()
             return
         }
-         //Creando el objeto registro con los datos ingresados y el id del usuario
-        val registro = Registros_estudiantes(nombre, apellido, grado, materia, notaFinal, userId)
 
-        val newKey = database.push().key
+        val newKey = database.push().key // Aquí lo que se hace es generar una clave aleatoria para cada registro
         if (newKey != null) {
-            database.child(newKey).setValue(registro).addOnSuccessListener {
+            //Creando el objeto registro con los datos ingresados y el id del usuario
+            val registro = Registros_estudiantes(newKey, nombre, apellido, grado, materia, notaFinal, userId)
+            database.child(newKey).setValue(registro).addOnSuccessListener { // Aquí si esto funciona se guarda el registro
                 Toast.makeText(this, "Registro guardado con éxito", Toast.LENGTH_SHORT).show()
                 limpiarCampos()
             }.addOnFailureListener {

@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.registroescolar.Registros.Registros_estudiantes
 import com.google.firebase.database.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -21,6 +23,7 @@ class VerRegistrosActivity : AppCompatActivity() {
     private lateinit var linearLayoutRegistros: LinearLayout
     private lateinit var agregarRegistrosButton: FloatingActionButton
     private lateinit var auth: FirebaseAuth
+    private lateinit var layoutNoRegistros: LinearLayout
     private var userId: String? = null
 
 
@@ -38,6 +41,7 @@ class VerRegistrosActivity : AppCompatActivity() {
         linearLayoutRegistros = findViewById(R.id.llRegistros)
         agregarRegistrosButton = findViewById(R.id.agregarregistros)
         auth = FirebaseAuth.getInstance()
+        layoutNoRegistros = findViewById(R.id.layout_no_registros)
 
         // Botón de cerrar sesión
         val btnCerrarSesion = findViewById<Button>(R.id.btncerrarsesion)
@@ -64,19 +68,23 @@ class VerRegistrosActivity : AppCompatActivity() {
         }
     }
 
+    // Esta función es donde recibe el id del usuario del docente y filtra a sus estudiantes registrados en las materias.
     private fun obtenerRegistros(userId: String) {
         database.orderByChild("userId").equalTo(userId).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                linearLayoutRegistros.removeAllViews()
+                linearLayoutRegistros.removeAllViews() // Esto es para limpiar el LinearLayout
                 if (snapshot.exists()) {
+                    layoutNoRegistros.visibility = View.GONE
                     for (registroSnapshot in snapshot.children) {
                         val registro = registroSnapshot.getValue(Registros_estudiantes::class.java)
                         registro?.let {
+                            it.id = registroSnapshot.key ?: "" // Asignar el ID del registro
                             mostrarRegistro(it)
                         }
                     }
                 } else {
                     Toast.makeText(this@VerRegistrosActivity, "No hay  registrados", Toast.LENGTH_SHORT).show()
+                    layoutNoRegistros.visibility = View.VISIBLE
                 }
             }
 
@@ -92,20 +100,45 @@ class VerRegistrosActivity : AppCompatActivity() {
             linearLayoutRegistros,
             false
         )
+        val codigoEstudiante = view.findViewById<TextView>(R.id.codigoEstudiante)
         val tvNombre = view.findViewById<TextView>(R.id.tvNombre)
         val tvApellido = view.findViewById<TextView>(R.id.tvApellido)
         val tvGrado = view.findViewById<TextView>(R.id.tvGrado)
         val tvMateria = view.findViewById<TextView>(R.id.tvMateria)
         val tvNotaFinal = view.findViewById<TextView>(R.id.tvNotaFinal)
+        val layoutAddStudentItem = view.findViewById<LinearLayout>(R.id.layoutAddStudentItem)
 
-        // Mostrar los datos del registro
-        tvNombre.text = "Nombre: ${registro.nombre}"
-        tvApellido.text = "Apellido: ${registro.apellido}"
+        // Mostrar los datos del registros
+        codigoEstudiante.text = "${registro.id}"  // Ahora mostramos el ID del registro
+        tvNombre.text = "${registro.nombre}"
+        tvApellido.text = "${registro.apellido}"
         tvGrado.text = "Grado: ${registro.grado}"
         tvMateria.text = "Materia: ${registro.materia}"
         tvNotaFinal.text = "Nota Final: ${registro.notaFinal}"
+        layoutAddStudentItem.visibility = View.VISIBLE
+
+
+        // **➡ Agregar evento click al botón de la flecha**
+        layoutAddStudentItem.setOnClickListener {
+            /*val intent = Intent(this, DetalleEstudianteActivity::class.java).apply {
+                putExtra("codigoEstudiante", registro.id)
+                putExtra("nombre", registro.nombre)
+                putExtra("apellido", registro.apellido)
+                putExtra("grado", registro.grado)
+                putExtra("materia", registro.materia)
+                putExtra("notaFinal", registro.notaFinal)*/
+                AlertDialog.Builder(this)
+                    .setTitle("Ver item")
+                    .setMessage("Procediendo a ver ítem")
+                    .show()
+            }
+            //startActivity(intent)
+
+
 
         linearLayoutRegistros.addView(view)
 
-    }}
+    }
 
+
+}

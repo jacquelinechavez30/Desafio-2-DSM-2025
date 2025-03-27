@@ -1,18 +1,24 @@
 <resources>
     <string name="app_name">Registro escolar</string>
     <string name="cerrarsesion">Cerrar Sesion</string>
-    <string name="Iniciar_sesión">Iniciar Sesion</string>
-    <string name="Registrase">Registrar Cuenta</string>
+    <string name="Iniciar_sesión">Iniciar Sesión</string>
+    <string name="Iniciar_sesion_action_TextView">Ya tengo una cuenta, quiero iniciar sesión</string>
+    <string name="Iniciar_sesión_bienvenida">Inicio de Sesión de Docentes</string>
+    <string name="Registrase">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="Registrarse_Action_Button">Registrarse</string>
     <string name="Guardar">Guardar</string>
     <string name="nombre">Nombre</string>
     <string name="nombreestudiante">Nombre:</string>
     <string name="apellidoestudiante">Apellido:</string>
-    <string name="correo">Correo electronico</string>
+    <string name="correo">Correo electrónico</string>
     <string name="contraseña">Contraseña</string>
     <string name="Grado">Grado:</string>
     <string name="Materia">Materia:</string>
     <string name="Nota_Final">Nota Final:</string>
     <string name="Cancelar">Cancelar</string>
-
+    <string name = "cargando">Cargando...</string>
+    <string name = "registros_Pantalla_titulo">Alumnos registrados</string>
+    <string name = "no_registros_Pantalla_titulo">No tienes alumnos registrados aún.</string>"
+    <string name="registrarse_title" >Registro de Docentes</string>
 
 </resources>

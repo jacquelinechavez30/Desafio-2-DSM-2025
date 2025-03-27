@@ -6,21 +6,31 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.PatternsCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
-    private lateinit var btnLogin: Button
-    private lateinit var btnRegister: Button
+    private lateinit var btnLogin: MaterialButton
+    private lateinit var btnRegister: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_profesores)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         auth = FirebaseAuth.getInstance()
         etEmail = findViewById(R.id.etEmail)
@@ -80,9 +90,9 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                 } else {
                     // Fallo el inicio de sesion e mujuestra un mensaje
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Log.w(TAG, "Se ha producido un error. Revisa tus credenciales por favor.", task.exception)
                     // Aquí muestra un mensaje de error al usuario
-                    showAlertDialog("Error", "signInWithEmail:failure" + task.exception)
+                    showAlertDialog("Error", "Error al iniciar sesión, revise sus credenciales por favor.")
                 }
             }
     }

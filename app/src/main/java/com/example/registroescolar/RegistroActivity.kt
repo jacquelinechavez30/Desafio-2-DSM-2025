@@ -13,13 +13,14 @@ import android.widget.Toast
 import androidx.core.util.PatternsCompat
 import androidx.appcompat.app.AlertDialog
 import android.util.Log
+import android.widget.TextView
 
 class RegistroActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var etRegisterEmail: EditText
     private lateinit var etRegisterPassword: EditText
     private lateinit var btnRegister: Button
-    private lateinit var btnLogin: Button
+    private lateinit var btnLogin: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -52,6 +52,8 @@ class VerRegistrosActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
         userId = intent.getStringExtra("USER_ID")
         if (userId == null) {
             Toast.makeText(this, "Error: Usuario no autenticado", Toast.LENGTH_SHORT).show()
@@ -129,7 +131,7 @@ class VerRegistrosActivity : AppCompatActivity() {
                 putExtra("apellido", registro.apellido)
                 putExtra("grado", registro.grado)
                 putExtra("materia", registro.materia)
-                putExtra("notaFinal", registro.notaFinal)
+                putExtra("notaFinal", registro.notaFinal.toString())
                 putExtra("USER_ID", userId)
             }
             startActivity(intent)

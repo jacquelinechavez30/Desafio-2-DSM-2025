@@ -8,17 +8,17 @@
     <string name="Registrarse_Action_Button">Registrarse</string>
     <string name="Guardar">Guardar</string>
     <string name="nombre">Nombre</string>
-    <string name="nombreestudiante">Nombre:</string>
-    <string name="apellidoestudiante">Apellido:</string>
+    <string name="nombreestudiante">Nombre</string>
+    <string name="apellidoestudiante">Apellido</string>
     <string name="correo">Correo electrónico</string>
     <string name="contraseña">Contraseña</string>
     <string name="Grado">Grado:</string>
     <string name="Materia">Materia:</string>
     <string name="Nota_Final">Nota Final:</string>
     <string name="Cancelar">Cancelar</string>
-    <string name = "cargando">Cargando...</string>
-    <string name = "registros_Pantalla_titulo">Alumnos registrados</string>
-    <string name = "no_registros_Pantalla_titulo">No tienes alumnos registrados aún.</string>"
-    <string name="registrarse_title" >Registro de Docentes</string>
+    <string name="cargando">Cargando...</string>
+    <string name="registros_Pantalla_titulo">Alumnos registrados</string>
+    <string name="no_registros_Pantalla_titulo">No tienes alumnos registrados aún.</string>"
+    <string name="registrarse_title">Registro de Docentes</string>
 
 </resources>

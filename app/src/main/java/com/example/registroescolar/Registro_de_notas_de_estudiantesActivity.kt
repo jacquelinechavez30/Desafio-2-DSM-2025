@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.view.View
 import com.example.registroescolar.Registros.Registros_estudiantes
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
@@ -44,9 +45,9 @@ class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
         }
         database = FirebaseDatabase.getInstance().getReference("Registros")
 
-        val btnCerrarSesion = findViewById<Button>(R.id.btncerrarsesion)
-        val btnGuardar = findViewById<Button>(R.id.btnGuardar)
-        val btnCancelar = findViewById<Button>(R.id.btnCancelar)
+        val btnCerrarSesion = findViewById<MaterialButton>(R.id.btncerrarsesion)
+        val btnGuardar = findViewById<MaterialButton>(R.id.btnGuardar)
+
         btnVerRegistros = findViewById(R.id.Verregistros)
 
         // Configurar el botón de cerrar sesión
@@ -61,16 +62,14 @@ class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
         btnGuardar.setOnClickListener {
             guardarregistro(it)
         }
-        //boton cancelar
-        btnCancelar.setOnClickListener {
-            cancelar(it)
-        }
+
         //boton ver registros
         btnVerRegistros.setOnClickListener {
             val intent = Intent(this, VerRegistrosActivity::class.java)
            //Le estoy enviando el id del usuario a la siguiente actividad
             intent.putExtra("USER_ID", userId) // esto es como manejar sesiones entre pantallas
             startActivity(intent)
+            finish() // Eliminar la actividad actual para que no aparezca en el historial de la RAM
         }
         edtNombre = findViewById(R.id.edtNombre)
         edtApellido = findViewById(R.id.edtApellido)
@@ -118,7 +117,11 @@ class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
             val registro = Registros_estudiantes(newKey, nombre, apellido, grado, materia, notaFinal, userId)
             database.child(newKey).setValue(registro).addOnSuccessListener { // Aquí si esto funciona se guarda el registro
                 Toast.makeText(this, "Registro guardado con éxito", Toast.LENGTH_SHORT).show()
-                limpiarCampos()
+                // Ir a la actividad de ver registros
+                val intent = Intent(this, VerRegistrosActivity::class.java)
+                intent.putExtra("USER_ID", userId)
+                startActivity(intent)
+                finish()
             }.addOnFailureListener {
                 Toast.makeText(this, "Error al guardar el registro", Toast.LENGTH_SHORT).show()
             }
@@ -126,13 +129,7 @@ class Registro_de_notas_de_estudiantesActivity : AppCompatActivity() {
             Toast.makeText(this, "No se pudo generar una clave", Toast.LENGTH_SHORT).show()
         }
     }
-    //mandar a la actividad de ver registros
-    fun cancelar(view: View) {
-        val intent = Intent(this, VerRegistrosActivity::class.java)
-       //Le estoy enviando el id del usuario a la siguiente actividad
-        intent.putExtra("USER_ID", userId)
-        startActivity(intent)
-    }
+
     //limpiar campos
     private fun limpiarCampos() {
         edtNombre.text.clear()

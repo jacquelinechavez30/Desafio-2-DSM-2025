@@ -55,7 +55,9 @@ class VerRegistrosActivity : AppCompatActivity() {
         userId = intent.getStringExtra("USER_ID")
         if (userId == null) {
             Toast.makeText(this, "Error: Usuario no autenticado", Toast.LENGTH_SHORT).show()
-            finish()
+            intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish() // para eliminar esta actividad del historial de la RAM
             return
         }
 
@@ -65,6 +67,7 @@ class VerRegistrosActivity : AppCompatActivity() {
             val intent = Intent(this, Registro_de_notas_de_estudiantesActivity::class.java)
             intent.putExtra("USER_ID", userId)
             startActivity(intent)
+            finish() // Eliminamos esta actividad para que no esté en el historial de la RAM
         }
     }
 
@@ -120,20 +123,18 @@ class VerRegistrosActivity : AppCompatActivity() {
 
         // **➡ Agregar evento click al botón de la flecha**
         layoutAddStudentItem.setOnClickListener {
-            /*val intent = Intent(this, DetalleEstudianteActivity::class.java).apply {
+            val intent = Intent(this, DetallesEspecificosEstudiantesActivity::class.java).apply {
                 putExtra("codigoEstudiante", registro.id)
                 putExtra("nombre", registro.nombre)
                 putExtra("apellido", registro.apellido)
                 putExtra("grado", registro.grado)
                 putExtra("materia", registro.materia)
-                putExtra("notaFinal", registro.notaFinal)*/
-                AlertDialog.Builder(this)
-                    .setTitle("Ver item")
-                    .setMessage("Procediendo a ver ítem")
-                    .show()
+                putExtra("notaFinal", registro.notaFinal)
+                putExtra("USER_ID", userId)
             }
-            //startActivity(intent)
-
+            startActivity(intent)
+            finish() // Eliminando esta actividad del historial de la RAM
+        }
 
 
         linearLayoutRegistros.addView(view)

@@ -5,76 +5,114 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Registro_de_notas_de_estudiantesActivity">
 
-    <include
-        android:id="@+id/barra_superior"
-        layout="@layout/activity_barrasuperior"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/barra_superior"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        tools:ignore="MissingConstraints">
+        <include
+            android:id="@+id/barra_superior"
+            layout="@layout/activity_barrasuperior"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            />
+        <TextView
+            android:id = "@+id/tituloDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingreso de estudiantes"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
 
+            />
         <EditText
             android:id="@+id/edtNombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/nombreestudiante" />
+            android:layout_height="50dp"
+            android:hint="@string/nombre"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
 
         <EditText
             android:id="@+id/edtApellido"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:hint="@string/apellidoestudiante" />
 
         <Spinner
             android:id="@+id/spinnerGrado"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Grado" />
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="Grado"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
 
         <Spinner
             android:id="@+id/spinnerMateria"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Materia" />
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="Materia"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
 
         <EditText
             android:id="@+id/edtNotaFinal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nota Final"
-            android:inputType="numberDecimal" />
+            android:layout_marginTop="20dp"
+            android:inputType="numberDecimal"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGuardar"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Guardar" />
+                android:text="@string/Guardar"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                app:cornerRadius="12dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="?attr/colorPrimary"
+                android:backgroundTint="?attr/colorPrimary"
+                android:textColor="?attr/colorOnPrimary"/>
 
-            <Button
+           <!-- <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCancelar"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Cancelar" />
+                android:text="@string/Cancelar"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                app:cornerRadius="12dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/color_rojo_background"
+                android:backgroundTint="@color/color_rojo_background"
+                android:textColor="?attr/colorOnPrimary"/>-->
 
         </LinearLayout>
 
@@ -83,12 +121,13 @@
         android:id="@+id/Verregistros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="bottom|center"
         android:layout_margin="16dp"
         android:text="@string/Iniciar_sesión_bienvenida"
         android:textSize="24sp"
-        android:textColor="@color/color_texto_principal"
-        android:backgroundTint="@color/color_acento"
+        android:backgroundTint="@color/black"
+        app:tint="@color/white"
+        app:srcCompat="@drawable/left_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

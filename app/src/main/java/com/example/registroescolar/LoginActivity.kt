@@ -22,6 +22,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnLogin: MaterialButton
     private lateinit var btnRegister: TextView
 
+    // Listener de FirebaseAuth
+    private lateinit var authStateListener: FirebaseAuth.AuthStateListener
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -48,7 +51,36 @@ class LoginActivity : AppCompatActivity() {
             val password: String = etPassword.text.toString()
             signIn(email, password)
         }
+
+        // Validar si existe un usuario activo
+        this.checkUser()
     }
+
+    override fun onResume() {
+        super.onResume()
+        auth.addAuthStateListener(authStateListener)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        auth.removeAuthStateListener(authStateListener)
+    }
+
+    private fun checkUser() {
+        //Verificación del usuario
+        authStateListener = FirebaseAuth.AuthStateListener {
+            auth ->
+                if(auth.currentUser != null) {
+                    // Cambiando la vista
+                    val intent = Intent(this, VerRegistrosActivity::class.java)
+                    val uid = auth.currentUser?.uid
+                    intent.putExtra("USER_ID", uid)
+                    startActivity(intent)
+                    finish() // Para eliminar esta actividad del historial de la RAM
+                }
+        }
+    }
+
 
     private fun showAlertDialog(title: String, message: String) {
         AlertDialog.Builder(this)
@@ -88,6 +120,7 @@ class LoginActivity : AppCompatActivity() {
                    //Le estoy enviando el id del usuario a la siguiente actividad
                     intent.putExtra("USER_ID", uid)
                     startActivity(intent)
+                    finish() // Hay que finalizar para que no quede en el record de la RAM
                 } else {
                     // Fallo el inicio de sesion e mujuestra un mensaje
                     Log.w(TAG, "Se ha producido un error. Revisa tus credenciales por favor.", task.exception)

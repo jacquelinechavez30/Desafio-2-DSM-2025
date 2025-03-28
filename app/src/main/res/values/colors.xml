@@ -9,6 +9,8 @@
     <color name="color_primario">#3F51B5</color>
     <color name="color_acento">#7C4DFF</color>
     <color name = "color_light_purple">#7562F5</color>
+    <color name = "color_rojo">#b30000</color>
+    <color name = "color_rojo_background">#4d0000</color>
 
     <!-- Colores de texto -->
     <color name="color_texto_principal">#212121</color>

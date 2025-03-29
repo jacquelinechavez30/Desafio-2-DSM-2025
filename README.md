@@ -34,7 +34,7 @@ Estas son algunas de las clases o actividades mas principales  del proyecto
 
 3. **`Registro_de_notas_de_estudiantesActivity`**: Actividad que permite  agregar registros de alumnos.
 
-4. **`VerRegistros`**: Adaptador personalizado para mostrar los registros de personas en una `ListView`.
+4. **`VerRegistros`**: Actividad que permite mostrar los registros de alumnos.
 
 ## Configuración del Proyecto
 
@@ -77,24 +77,24 @@ Estas son algunas de las clases o actividades mas principales  del proyecto
 6. **Eliminar un alumno**: Haz clic en la opción eliminar estudiante que esta en la zona peligro de bajo de editar alumno para eliminar el registro deberas confirmar que deseas eliminar el registro.
 
 ## Registro
-<img src="" alt="Registro de la aplicacion" width="300" height="600">
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/registro.png" alt="Registro de la aplicacion" width="300" height="600">
 
 ## Login
-<img src="" alt="Login de la aplicacion" width="300" height="600">
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/login.png" alt="Login de la aplicacion" width="300" height="600">
 
 ## Registro_de_notas_de_estudiantes
-<img src="" alt="Registro_de_notas_de_estudiantes" width="300" height="600">
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/registro%20estudiantes.png" alt="Registro_de_notas_de_estudiantes" width="300" height="600">
 
 ## Ver registro de estudiantes
-<img src="" alt="Ver registro de estudiantes" width="300" height="600">
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/VerRegistros.png" alt="Ver registro de estudiantes" width="300" height="600">
 
-## Editar estudiantes
-<img src="" alt="Editar estudiantes" width="300" height="600">
+## Editar estudiante o detalles estudiante
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/detallesoedicion%20y%20eliminacion.png" alt="Editar estudiantes" width="300" height="600">
 
 ## Eliminar estudiante
-<img src="" alt="Eliminar estudiante" width="300" height="600">
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/Eliminacion.png" alt="Eliminar estudiante" width="300" height="600">
 
 ## Confirmar eliminar estudiante 
-<img src="" alt="Confirmar eliminar estudiante " width="300" height="600">
+<img src="https://github.com/jacquelinechavez30/Desafio-2-DSM-2025/blob/main/img/confirmacioneliminacion.png" alt="Confirmar eliminar estudiante " width="300" height="600">
 
 

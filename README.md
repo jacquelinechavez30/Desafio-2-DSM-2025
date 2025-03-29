@@ -1,7 +1,7 @@
 <h1>Desafío 2 - App de Registro de Estudiantes - DSM Laboratorio</h1>
-# Integrantes:
-Jacqueline Alexandra Chavez Ramírez, CR200574
-Mauricio Alexander Pérez Salinas, PS212544
+<h3> Integrantes: </h3>
+-Jacqueline Alexandra Chavez Ramírez, CR200574.
+-Mauricio Alexander Pérez Salinas, PS212544.
 
 
 ## Descripción
